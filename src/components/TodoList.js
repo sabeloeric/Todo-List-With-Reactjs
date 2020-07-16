@@ -1,22 +1,10 @@
-import React,{useState} from 'react'
+import React from 'react'
 import Todo from './Todo'
-export default function TodoList() {
-    let todo1 = {
-        'id' : '1',
-        'title' : 'clean room'
-    }
-    let todo2 = {
-        'id' : '2',
-        'title' : 'wash clothes'
-    }
-
-
-    let [listTodos, setListTodos] = useState([todo1, todo2]);
-
+export default function TodoList({todos, handleDeleteTodo}) {
 
     return (
         <div>
-            <Todo todos={listTodos}/>
+            <Todo todos={todos} deleteTodo={handleDeleteTodo}/>
         </div>
     )
 }
