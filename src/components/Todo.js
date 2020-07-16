@@ -5,7 +5,6 @@ export default function Todo({ todos, deleteATodo }) {
 
     const handleDeleteTodo = (e) =>{
         const id = e.target.id;
-        console.log(id)
         deleteATodo(id);
     }
 

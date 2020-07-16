@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function Header() {
+export default function Header({numberTotalTodos}) {
     return (
         <div>
-            header
+            <i>Todos Left: {numberTotalTodos}</i>
         </div>
     )
 }
