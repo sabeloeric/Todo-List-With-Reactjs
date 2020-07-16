@@ -1,7 +1,14 @@
 import React from "react";
 import { Button, Container, Col, Row } from "react-bootstrap";
 
-export default function Todo({ todos, handleDeleteTodo }) {
+export default function Todo({ todos, deleteATodo }) {
+
+    const handleDeleteTodo = (e) =>{
+        const id = e.target.id;
+        console.log(id)
+        deleteATodo(id);
+    }
+
   return (
     <div>
       {todos.map((todo) => {
@@ -10,7 +17,7 @@ export default function Todo({ todos, handleDeleteTodo }) {
             <Row>
               <Col>{todo.name}</Col>
               <Col xs={3}>
-                <Button  variant="outline-danger">delete</Button>
+                <Button id={todo.id} onClick={handleDeleteTodo}  variant="outline-danger">delete</Button>
               </Col>
             </Row>
           </Container>
